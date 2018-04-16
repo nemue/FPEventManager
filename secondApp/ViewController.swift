@@ -8,11 +8,49 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    // MARK: - Properties
+    
+    let cellIdentifier = "CellIdentifier"
+    var dates: [String] = []
 
+    
+    // MARK: – UITableViewDataSource
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let numberOfRows = dates.count
+        return numberOfRows
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+        let date = dates[indexPath.row]
+        
+        cell.textLabel?.text = date
+        return cell
+    }
+    
+    // MARK: - UITableViewDelegate
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // TODO: respond to touch events
+        let date = dates[indexPath.row]
+        print(date)
+    }
+    
+    
+    // MARK: - ViewController Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        // TODO: ersetzen mit Date-Klasse-Array
+        dates = ["erstes Date", "zweites Date", "drittes Date", "viertes Date"]
     }
 
     override func didReceiveMemoryWarning() {
