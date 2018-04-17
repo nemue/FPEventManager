@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F754820D2084CEE700E2B924 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = F754820C2084CEE700E2B924 /* Event.swift */; };
+		F754820F2084DCF700E2B924 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F754820E2084DCF700E2B924 /* EventTableViewCell.swift */; };
 		F7F3118E20600C980019A496 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F3118D20600C980019A496 /* AppDelegate.swift */; };
 		F7F3119020600C980019A496 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F3118F20600C980019A496 /* ViewController.swift */; };
 		F7F3119320600C980019A496 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7F3119120600C980019A496 /* Main.storyboard */; };
@@ -26,6 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F754820C2084CEE700E2B924 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		F754820E2084DCF700E2B924 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		F7F3118A20600C980019A496 /* secondApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = secondApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7F3118D20600C980019A496 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7F3118F20600C980019A496 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +83,8 @@
 			children = (
 				F7F3118D20600C980019A496 /* AppDelegate.swift */,
 				F7F3118F20600C980019A496 /* ViewController.swift */,
+				F754820C2084CEE700E2B924 /* Event.swift */,
+				F754820E2084DCF700E2B924 /* EventTableViewCell.swift */,
 				F7F3119120600C980019A496 /* Main.storyboard */,
 				F7F3119420600C980019A496 /* Assets.xcassets */,
 				F7F3119620600C980019A496 /* LaunchScreen.storyboard */,
@@ -199,7 +205,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F754820F2084DCF700E2B924 /* EventTableViewCell.swift in Sources */,
 				F7F3119020600C980019A496 /* ViewController.swift in Sources */,
+				F754820D2084CEE700E2B924 /* Event.swift in Sources */,
 				F7F3118E20600C980019A496 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,8 +12,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     // MARK: - Properties
     
-    let cellIdentifier = "CellIdentifier"
-    var dates: [String] = []
+    let cellIdentifier = "EventTableViewCell"
+    var events: [Event] = []
 
     
     // MARK: – UITableViewDataSource
@@ -23,24 +23,31 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let numberOfRows = dates.count
+        let numberOfRows = events.count
         return numberOfRows
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
-        let date = dates[indexPath.row]
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? EventTableViewCell
+            else{
+                fatalError("The dequeued cell is not an instance of EventTableViewCell")
+        }
         
-        cell.textLabel?.text = date
+        let event = events[indexPath.row]
+        cell.eventTitleLabel.text = event.title + ", " + event.location!
+        cell.eventDateLabel.text = event.date
+        
         return cell
     }
     
     // MARK: - UITableViewDelegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         // TODO: respond to touch events
-        let date = dates[indexPath.row]
-        print(date)
+        let event = events[indexPath.row]
+        print(event.title)
+        print(event.date)
     }
     
     
@@ -49,15 +56,42 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // TODO: ersetzen mit Date-Klasse-Array
-        dates = ["erstes Date", "zweites Date", "drittes Date", "viertes Date"]
+        generateSampleEvents()
+
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    
+    // MARK: - Private Methods
+    
+    private func generateSampleEvents () {
+        
+        guard let event1 = Event(title: "erstes Event", location: "hier", date: "heute")
+            else {
+                fatalError("Unable to instantiate Event 1")
+        }
+        
+        guard let event2 = Event(title: "zweites Event", location: "da", date: "morgen")
+            else {
+                fatalError("Unable to instantiate Event 2")
+        }
+        
+        guard let event3 = Event(title: "drittes Event", location: "Berlin", date: "niemals")
+            else {
+                fatalError("Unable to instantiate Event 3")
+        }
+        
+        guard let event4 = Event(title: "viertes Event", location: "Leipzig", date: "immer")
+            else {
+                fatalError("Unable to instantiate Event 4")
+        }
+        
+        events += [event1, event2, event3, event4]
+    }
 
 }
 
