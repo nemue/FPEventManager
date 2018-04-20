@@ -35,8 +35,9 @@ class EventTableViewController: UIViewController, UITableViewDataSource, UITable
         
         let event = events[indexPath.row]
         cell.eventTitleLabel.text = event.title + ", " + event.location!
-        cell.eventDateLabel.text = event.date
         cell.eventAllDaySwitch.isOn = events[indexPath.row].allDay!
+        cell.eventDateLabel.text = Event.dateToString(toBeConverted: event.date,
+                                                      time: !cell.eventAllDaySwitch.isOn)
         
         return cell
     }
@@ -85,22 +86,24 @@ class EventTableViewController: UIViewController, UITableViewDataSource, UITable
     
     private func generateSampleEvents () {
         
-        guard let event1 = Event(title: "erstes Event", date: "heute")
+        let date = Date()
+        
+        guard let event1 = Event(title: "erstes Event", date: date)
             else {
                 fatalError("Unable to instantiate Event 1")
         }
         
-        guard let event2 = Event(title: "zweites Event", location: "da", date: "morgen")
+        guard let event2 = Event(title: "zweites Event", location: "da", date: date)
             else {
                 fatalError("Unable to instantiate Event 2")
         }
         
-        guard let event3 = Event(title: "drittes Event", location: "Berlin", date: "niemals")
+        guard let event3 = Event(title: "drittes Event", location: "Berlin", date: date)
             else {
                 fatalError("Unable to instantiate Event 3")
         }
         
-        guard let event4 = Event(title: "viertes Event", location: "Leipzig", date: "immer", allDay: true)
+        guard let event4 = Event(title: "viertes Event", location: "Leipzig", date: date, allDay: true)
             else {
                 fatalError("Unable to instantiate Event 4")
         }

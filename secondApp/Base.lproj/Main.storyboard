@@ -169,6 +169,9 @@
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="uPf-GH-7ml">
                                                     <rect key="frame" x="310" y="6" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="switchStateChanged:" destination="PJY-kd-yWb" eventType="valueChanged" id="Df2-wA-o6M"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -229,6 +232,9 @@
                                                     <date key="date" timeIntervalSinceReferenceDate="545842219.12852502">
                                                         <!--2018-04-19 14:50:19 +0000-->
                                                     </date>
+                                                    <connections>
+                                                        <action selector="changeDate:" destination="PJY-kd-yWb" eventType="valueChanged" id="Ljm-3n-vkU"/>
+                                                    </connections>
                                                 </datePicker>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -257,6 +263,7 @@
                         <outlet property="addButton" destination="jzs-5a-U9o" id="K31-D9-ici"/>
                         <outlet property="allDaySwitch" destination="uPf-GH-7ml" id="rld-7S-OHs"/>
                         <outlet property="dateLabel" destination="KMi-5k-DsQ" id="So9-Sn-Hbx"/>
+                        <outlet property="datePicker" destination="gGe-uj-Hw0" id="m72-uZ-oDL"/>
                         <outlet property="datePickerCell" destination="XBc-Ph-HHD" id="xju-YQ-GZr"/>
                         <outlet property="locationTextField" destination="l2m-aU-PUN" id="LYj-BM-lpo"/>
                         <outlet property="titleTextField" destination="iZh-mU-RWw" id="5gC-6m-diH"/>

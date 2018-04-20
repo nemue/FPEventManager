@@ -14,16 +14,16 @@ class Event {
     
     var title: String = ""
     var location: String?
-    var date: String // TODO
+    var date: Date
     var allDay: Bool?
     
     
     // MARK: - Initialization
     
-    init?(title: String, location: String? = "", date: String, allDay: Bool? = false){
+    init?(title: String, location: String? = "", date: Date, allDay: Bool? = false){
         // besser convenience initializer für optional parameters statt default-wert?
         
-        if title.isEmpty || date.isEmpty {
+        if title.isEmpty {
             return nil
         }
         
@@ -32,6 +32,21 @@ class Event {
         self.date = date
         self.allDay = allDay
         
+    }
+    
+    // MARK: - Static Methods
+    
+    static func dateToString(toBeConverted: Date, time: Bool) -> String {
+        let dateFormatter = DateFormatter()
+
+        if (time){
+            dateFormatter.dateFormat = "dd. MMM yyy HH:mm"
+        }
+        else {
+            dateFormatter.dateFormat = "dd. MMM yyy"
+        }
+        
+        return dateFormatter.string(from: toBeConverted)
     }
     
     // MARK: - Private Methods
