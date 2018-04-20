@@ -8,13 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class EventTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     // MARK: - Properties
     
     let cellIdentifier = "EventTableViewCell"
     var events: [Event] = []
-
+    @IBOutlet weak var tableView: UITableView!
     
     // MARK: – UITableViewDataSource
     
@@ -36,6 +36,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let event = events[indexPath.row]
         cell.eventTitleLabel.text = event.title + ", " + event.location!
         cell.eventDateLabel.text = event.date
+        cell.eventAllDaySwitch.isOn = events[indexPath.row].allDay!
         
         return cell
     }
@@ -47,7 +48,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // TODO: respond to touch events
         let event = events[indexPath.row]
         print(event.title)
+        print(String(describing: event.location!))
         print(event.date)
+        print(String(describing: event.allDay!))
     }
     
     
@@ -65,12 +68,24 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - Actions
+    
+    @IBAction func unwindToEventList(sender: UIStoryboardSegue){
+        if let sourceViewController = sender.source as? EventDetailTableViewController, let event = sourceViewController.event{
+            let newIndexPath = IndexPath(row: events.count, section: 0)
+            
+            events.append(event)
+            
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
+        }
+    }
+    
     
     // MARK: - Private Methods
     
     private func generateSampleEvents () {
         
-        guard let event1 = Event(title: "erstes Event", location: "hier", date: "heute")
+        guard let event1 = Event(title: "erstes Event", date: "heute")
             else {
                 fatalError("Unable to instantiate Event 1")
         }
@@ -85,7 +100,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 fatalError("Unable to instantiate Event 3")
         }
         
-        guard let event4 = Event(title: "viertes Event", location: "Leipzig", date: "immer")
+        guard let event4 = Event(title: "viertes Event", location: "Leipzig", date: "immer", allDay: true)
             else {
                 fatalError("Unable to instantiate Event 4")
         }

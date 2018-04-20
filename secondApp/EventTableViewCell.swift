@@ -13,8 +13,8 @@ class EventTableViewCell: UITableViewCell {
     // MARK: - Properties
     @IBOutlet weak var eventTitleLabel: UILabel!
     @IBOutlet weak var eventDateLabel: UILabel!
+    @IBOutlet weak var eventAllDaySwitch: UISwitch!
     
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

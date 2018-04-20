@@ -9,8 +9,9 @@
 /* Begin PBXBuildFile section */
 		F754820D2084CEE700E2B924 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = F754820C2084CEE700E2B924 /* Event.swift */; };
 		F754820F2084DCF700E2B924 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F754820E2084DCF700E2B924 /* EventTableViewCell.swift */; };
+		F77DC7A62085F6EE008A21F8 /* EventDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77DC7A52085F6EE008A21F8 /* EventDetailTableViewController.swift */; };
 		F7F3118E20600C980019A496 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F3118D20600C980019A496 /* AppDelegate.swift */; };
-		F7F3119020600C980019A496 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F3118F20600C980019A496 /* ViewController.swift */; };
+		F7F3119020600C980019A496 /* EventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F3118F20600C980019A496 /* EventTableViewController.swift */; };
 		F7F3119320600C980019A496 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7F3119120600C980019A496 /* Main.storyboard */; };
 		F7F3119520600C980019A496 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7F3119420600C980019A496 /* Assets.xcassets */; };
 		F7F3119820600C980019A496 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7F3119620600C980019A496 /* LaunchScreen.storyboard */; };
@@ -30,9 +31,10 @@
 /* Begin PBXFileReference section */
 		F754820C2084CEE700E2B924 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		F754820E2084DCF700E2B924 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
+		F77DC7A52085F6EE008A21F8 /* EventDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailTableViewController.swift; sourceTree = "<group>"; };
 		F7F3118A20600C980019A496 /* secondApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = secondApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7F3118D20600C980019A496 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F7F3118F20600C980019A496 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F7F3118F20600C980019A496 /* EventTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewController.swift; sourceTree = "<group>"; };
 		F7F3119220600C980019A496 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F7F3119420600C980019A496 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F7F3119720600C980019A496 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -82,9 +84,10 @@
 			isa = PBXGroup;
 			children = (
 				F7F3118D20600C980019A496 /* AppDelegate.swift */,
-				F7F3118F20600C980019A496 /* ViewController.swift */,
+				F7F3118F20600C980019A496 /* EventTableViewController.swift */,
 				F754820C2084CEE700E2B924 /* Event.swift */,
 				F754820E2084DCF700E2B924 /* EventTableViewCell.swift */,
+				F77DC7A52085F6EE008A21F8 /* EventDetailTableViewController.swift */,
 				F7F3119120600C980019A496 /* Main.storyboard */,
 				F7F3119420600C980019A496 /* Assets.xcassets */,
 				F7F3119620600C980019A496 /* LaunchScreen.storyboard */,
@@ -205,8 +208,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F77DC7A62085F6EE008A21F8 /* EventDetailTableViewController.swift in Sources */,
 				F754820F2084DCF700E2B924 /* EventTableViewCell.swift in Sources */,
-				F7F3119020600C980019A496 /* ViewController.swift in Sources */,
+				F7F3119020600C980019A496 /* EventTableViewController.swift in Sources */,
 				F754820D2084CEE700E2B924 /* Event.swift in Sources */,
 				F7F3118E20600C980019A496 /* AppDelegate.swift in Sources */,
 			);

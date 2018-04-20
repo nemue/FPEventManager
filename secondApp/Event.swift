@@ -15,11 +15,13 @@ class Event {
     var title: String = ""
     var location: String?
     var date: String // TODO
+    var allDay: Bool?
     
     
     // MARK: - Initialization
     
-    init?(title: String, location: String?, date: String){
+    init?(title: String, location: String? = "", date: String, allDay: Bool? = false){
+        // besser convenience initializer für optional parameters statt default-wert?
         
         if title.isEmpty || date.isEmpty {
             return nil
@@ -28,5 +30,10 @@ class Event {
         self.title = title
         self.location = location
         self.date = date
+        self.allDay = allDay
+        
     }
+    
+    // MARK: - Private Methods
+    
 }
