@@ -16,6 +16,7 @@ class EventTableViewController: UIViewController, UITableViewDataSource, UITable
     var events: [Event] = []
     @IBOutlet weak var tableView: UITableView!
     
+    
     // MARK: – UITableViewDataSource
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -41,6 +42,7 @@ class EventTableViewController: UIViewController, UITableViewDataSource, UITable
         
         return cell
     }
+    
     
     // MARK: - UITableViewDelegate
     
@@ -68,6 +70,7 @@ class EventTableViewController: UIViewController, UITableViewDataSource, UITable
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
     // MARK: - Actions
     

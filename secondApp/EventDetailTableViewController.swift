@@ -9,7 +9,7 @@
 import UIKit
 import os.log
 
-class EventDetailTableViewController: UITableViewController {
+class EventDetailTableViewController: UITableViewController, UITextFieldDelegate {
     
     // MARK: - Properties
     @IBOutlet weak var titleTextField: UITextField!
@@ -33,12 +33,16 @@ class EventDetailTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        titleTextField.delegate = self
+        
         date = Date ()
         guard let currentDate = date else{
             return
         }
         
         updateDateAndLabel(date: currentDate, displayTime: true)
+        
+        updateAddButtonState()
     }
 
     override func didReceiveMemoryWarning() {
@@ -88,7 +92,6 @@ class EventDetailTableViewController: UITableViewController {
                 datePickerCell.isHidden = true
                 datePickerOpen = false
             }
-
         }
     }
     
@@ -98,6 +101,23 @@ class EventDetailTableViewController: UITableViewController {
     
     @IBAction func switchStateChanged(_ sender: UISwitch) {
         updateDateAndLabel(date: datePicker.date, displayTime: !allDaySwitch.isOn)
+    }
+    
+    
+    // MARK: - UITextFieldDelegate
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        titleTextField.resignFirstResponder()
+        
+        return true
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        addButton.isEnabled = false
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        updateAddButtonState()
     }
     
     
@@ -112,20 +132,11 @@ class EventDetailTableViewController: UITableViewController {
             self.date = calender.startOfDay(for: date)
         }
         
-        print(Event.dateToString(toBeConverted: date, time: displayTime))
     }
     
-    // löschen:
-    private func eventToArray(event: Event ) -> [[String]]{
-        var resultEvent = [[String]] ()
-        
-        guard let location = event.location else {
-            fatalError("Event has no location")
-        }
-        
-        resultEvent += [[event.title, location], [String(describing: event.date)]]
-        
-        return resultEvent
+    private func updateAddButtonState() {
+        let text = titleTextField.text ?? ""
+        addButton.isEnabled = !text.isEmpty
     }
 
 }

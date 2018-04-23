@@ -232,6 +232,7 @@
                                                     <date key="date" timeIntervalSinceReferenceDate="545842219.12852502">
                                                         <!--2018-04-19 14:50:19 +0000-->
                                                     </date>
+                                                    <locale key="locale" localeIdentifier="de"/>
                                                     <connections>
                                                         <action selector="changeDate:" destination="PJY-kd-yWb" eventType="valueChanged" id="Ljm-3n-vkU"/>
                                                     </connections>
