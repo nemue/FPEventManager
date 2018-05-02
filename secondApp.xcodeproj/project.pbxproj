@@ -7,9 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F728B87A208E1E9700B9819E /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F728B879208E1E9700B9819E /* DateExtension.swift */; };
 		F754820D2084CEE700E2B924 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = F754820C2084CEE700E2B924 /* Event.swift */; };
 		F754820F2084DCF700E2B924 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F754820E2084DCF700E2B924 /* EventTableViewCell.swift */; };
 		F77DC7A62085F6EE008A21F8 /* EventDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77DC7A52085F6EE008A21F8 /* EventDetailTableViewController.swift */; };
+		F7AE9152209700B7005E06B8 /* EventDetailDatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AE9151209700B7005E06B8 /* EventDetailDatePickerCell.swift */; };
+		F7AF3B872091B4E1002DCF40 /* EventDetailAlldaySwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AF3B862091B4E1002DCF40 /* EventDetailAlldaySwitchCell.swift */; };
+		F7AF3B892091B578002DCF40 /* EventDetailDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AF3B882091B578002DCF40 /* EventDetailDateCell.swift */; };
+		F7BB87E1208F1B7C00577150 /* EventDetailTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BB87E0208F1B7C00577150 /* EventDetailTextCell.swift */; };
 		F7F3118E20600C980019A496 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F3118D20600C980019A496 /* AppDelegate.swift */; };
 		F7F3119020600C980019A496 /* EventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F3118F20600C980019A496 /* EventTableViewController.swift */; };
 		F7F3119320600C980019A496 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7F3119120600C980019A496 /* Main.storyboard */; };
@@ -29,9 +34,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F728B879208E1E9700B9819E /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		F754820C2084CEE700E2B924 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		F754820E2084DCF700E2B924 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		F77DC7A52085F6EE008A21F8 /* EventDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailTableViewController.swift; sourceTree = "<group>"; };
+		F7AE9151209700B7005E06B8 /* EventDetailDatePickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailDatePickerCell.swift; sourceTree = "<group>"; };
+		F7AF3B862091B4E1002DCF40 /* EventDetailAlldaySwitchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailAlldaySwitchCell.swift; sourceTree = "<group>"; };
+		F7AF3B882091B578002DCF40 /* EventDetailDateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailDateCell.swift; sourceTree = "<group>"; };
+		F7BB87E0208F1B7C00577150 /* EventDetailTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailTextCell.swift; sourceTree = "<group>"; };
 		F7F3118A20600C980019A496 /* secondApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = secondApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7F3118D20600C980019A496 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7F3118F20600C980019A496 /* EventTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewController.swift; sourceTree = "<group>"; };
@@ -84,10 +94,15 @@
 			isa = PBXGroup;
 			children = (
 				F7F3118D20600C980019A496 /* AppDelegate.swift */,
-				F7F3118F20600C980019A496 /* EventTableViewController.swift */,
+				F728B879208E1E9700B9819E /* DateExtension.swift */,
 				F754820C2084CEE700E2B924 /* Event.swift */,
+				F7F3118F20600C980019A496 /* EventTableViewController.swift */,
 				F754820E2084DCF700E2B924 /* EventTableViewCell.swift */,
 				F77DC7A52085F6EE008A21F8 /* EventDetailTableViewController.swift */,
+				F7BB87E0208F1B7C00577150 /* EventDetailTextCell.swift */,
+				F7AF3B862091B4E1002DCF40 /* EventDetailAlldaySwitchCell.swift */,
+				F7AF3B882091B578002DCF40 /* EventDetailDateCell.swift */,
+				F7AE9151209700B7005E06B8 /* EventDetailDatePickerCell.swift */,
 				F7F3119120600C980019A496 /* Main.storyboard */,
 				F7F3119420600C980019A496 /* Assets.xcassets */,
 				F7F3119620600C980019A496 /* LaunchScreen.storyboard */,
@@ -209,10 +224,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				F77DC7A62085F6EE008A21F8 /* EventDetailTableViewController.swift in Sources */,
+				F728B87A208E1E9700B9819E /* DateExtension.swift in Sources */,
+				F7AF3B872091B4E1002DCF40 /* EventDetailAlldaySwitchCell.swift in Sources */,
+				F7BB87E1208F1B7C00577150 /* EventDetailTextCell.swift in Sources */,
 				F754820F2084DCF700E2B924 /* EventTableViewCell.swift in Sources */,
+				F7AF3B892091B578002DCF40 /* EventDetailDateCell.swift in Sources */,
 				F7F3119020600C980019A496 /* EventTableViewController.swift in Sources */,
 				F754820D2084CEE700E2B924 /* Event.swift in Sources */,
 				F7F3118E20600C980019A496 /* AppDelegate.swift in Sources */,
+				F7AE9152209700B7005E06B8 /* EventDetailDatePickerCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

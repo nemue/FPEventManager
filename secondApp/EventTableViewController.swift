@@ -10,12 +10,14 @@ import UIKit
 
 class EventTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    // MARK: - Outlets
+    
+    @IBOutlet private weak var tableView: UITableView!
+    
     // MARK: - Properties
     
     let cellIdentifier = "EventTableViewCell"
     var events: [Event] = []
-    @IBOutlet weak var tableView: UITableView!
-    
     
     // MARK: – UITableViewDataSource
     
@@ -35,11 +37,7 @@ class EventTableViewController: UIViewController, UITableViewDataSource, UITable
         }
         
         let event = events[indexPath.row]
-        cell.eventTitleLabel.text = event.title + ", " + event.location!
-        cell.eventAllDaySwitch.isOn = events[indexPath.row].allDay!
-        cell.eventDateLabel.text = Event.dateToString(toBeConverted: event.date,
-                                                      time: !cell.eventAllDaySwitch.isOn)
-        
+        cell.configureCell(eventInRow: event)
         return cell
     }
     
@@ -50,10 +48,8 @@ class EventTableViewController: UIViewController, UITableViewDataSource, UITable
         
         // TODO: respond to touch events
         let event = events[indexPath.row]
-        print(event.title)
-        print(String(describing: event.location!))
+        print(event.title ?? "")
         print(event.date)
-        print(String(describing: event.allDay!))
     }
     
     
@@ -78,9 +74,11 @@ class EventTableViewController: UIViewController, UITableViewDataSource, UITable
         if let sourceViewController = sender.source as? EventDetailTableViewController, let event = sourceViewController.event{
             let newIndexPath = IndexPath(row: events.count, section: 0)
             
-            events.append(event)
-            
-            tableView.insertRows(at: [newIndexPath], with: .automatic)
+            let eventTitle = event.title ?? ""
+            if (!eventTitle.isEmpty){
+                events.append(event)
+                tableView.insertRows(at: [newIndexPath], with: .automatic)
+            }
         }
     }
     
@@ -91,25 +89,10 @@ class EventTableViewController: UIViewController, UITableViewDataSource, UITable
         
         let date = Date()
         
-        guard let event1 = Event(title: "erstes Event", date: date)
-            else {
-                fatalError("Unable to instantiate Event 1")
-        }
-        
-        guard let event2 = Event(title: "zweites Event", location: "da", date: date)
-            else {
-                fatalError("Unable to instantiate Event 2")
-        }
-        
-        guard let event3 = Event(title: "drittes Event", location: "Berlin", date: date)
-            else {
-                fatalError("Unable to instantiate Event 3")
-        }
-        
-        guard let event4 = Event(title: "viertes Event", location: "Leipzig", date: date, allDay: true)
-            else {
-                fatalError("Unable to instantiate Event 4")
-        }
+        let event1 = Event(title: "erstes Event", date: date)
+        let event2 = Event(title: "zweites Event", location: "da", date: date)
+        let event3 = Event(title: "drittes Event", location: "Berlin", date: date)
+        let event4 = Event(title: "viertes Event", location: "Leipzig", date: date, allDay: true)
         
         events += [event1, event2, event3, event4]
     }
