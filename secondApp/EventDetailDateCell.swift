@@ -13,13 +13,11 @@ class EventDetailDateCell: UITableViewCell {
     // MARK: - Outlets
     
     @IBOutlet private weak var dateLabel: UILabel!
-       
     
     // MARK: - Configuration
     
-    func configure(date: Date, allDay: Bool) {
-        self.dateLabel.text = date.toStringIncludedTime(!allDay)
+    func configure(showDate: Date, isAllDayEvent: Bool) {
+        self.dateLabel.text = showDate.toStringIncludedTime(!isAllDayEvent)
     }
-
 }
 

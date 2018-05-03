@@ -19,11 +19,11 @@ class Event {
 
     // MARK: - Initialization
     
-    init(title: String? = "", location: String? = "", date: Date, allDay: Bool? = false) {
+    init(title: String? = nil, location: String? = nil, date: Date? = Date(), allDay: Bool? = false) {
         
         self.title = title
         self.location = location
-        self.date = date
+        self.date = date ?? Date()
         self.allDay = allDay
     }
 

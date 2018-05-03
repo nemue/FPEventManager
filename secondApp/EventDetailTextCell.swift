@@ -17,7 +17,7 @@ class EventDetailTextCell: UITableViewCell {
     
     // MARK: - Configuration
     
-    func configure(textFieldDelegate: UITextFieldDelegate, text: String, tag: Int) {
+    func configure(textFieldDelegate: UITextFieldDelegate, text: String?, tag: Int) {
         self.textField.delegate = textFieldDelegate
         self.textField.text = text
         self.textField.tag = tag

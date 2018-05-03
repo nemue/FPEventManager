@@ -10,15 +10,23 @@ import UIKit
 
 class EventDetailDatePickerCell: UITableViewCell {
     
-    private var dateChangedHandler: ((Date) -> Void)?
-
+    // MARK: - Outlets
+    
     @IBOutlet private weak var datePicker: UIDatePicker!
+    
+    // MARK: - Properties
+    
+    private var dateChangedHandler: ((Date) -> Void)?
+    
+    // MARK: - Configuration
     
     func configure(onDateChangedHandler: @escaping ((Date) -> Void)) {
         self.dateChangedHandler = onDateChangedHandler
     }
     
-    @IBAction func dateChanged(_ sender: UIDatePicker) {
-        self.dateChangedHandler?(sender.date)
+    // MARK: - Actions
+    
+    @IBAction func dateChanged(_ datePicker: UIDatePicker) {
+        self.dateChangedHandler?(datePicker.date)
     }
 }

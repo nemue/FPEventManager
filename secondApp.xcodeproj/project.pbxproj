@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F7254E7D209B0250003BDA94 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7254E7C209B0250003BDA94 /* Constants.swift */; };
 		F728B87A208E1E9700B9819E /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F728B879208E1E9700B9819E /* DateExtension.swift */; };
 		F754820D2084CEE700E2B924 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = F754820C2084CEE700E2B924 /* Event.swift */; };
 		F754820F2084DCF700E2B924 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F754820E2084DCF700E2B924 /* EventTableViewCell.swift */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F7254E7C209B0250003BDA94 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F728B879208E1E9700B9819E /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		F754820C2084CEE700E2B924 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		F754820E2084DCF700E2B924 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				F77DC7A52085F6EE008A21F8 /* EventDetailTableViewController.swift */,
 				F7BB87E0208F1B7C00577150 /* EventDetailTextCell.swift */,
 				F7AF3B862091B4E1002DCF40 /* EventDetailAlldaySwitchCell.swift */,
+				F7254E7C209B0250003BDA94 /* Constants.swift */,
 				F7AF3B882091B578002DCF40 /* EventDetailDateCell.swift */,
 				F7AE9151209700B7005E06B8 /* EventDetailDatePickerCell.swift */,
 				F7F3119120600C980019A496 /* Main.storyboard */,
@@ -231,6 +234,7 @@
 				F7AF3B892091B578002DCF40 /* EventDetailDateCell.swift in Sources */,
 				F7F3119020600C980019A496 /* EventTableViewController.swift in Sources */,
 				F754820D2084CEE700E2B924 /* Event.swift in Sources */,
+				F7254E7D209B0250003BDA94 /* Constants.swift in Sources */,
 				F7F3118E20600C980019A496 /* AppDelegate.swift in Sources */,
 				F7AE9152209700B7005E06B8 /* EventDetailDatePickerCell.swift in Sources */,
 			);

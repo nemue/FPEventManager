@@ -19,13 +19,11 @@ class EventTableViewCell: UITableViewCell {
     func configureCell(eventInRow: Event) {
         var textForCell = eventInRow.title ?? ""
         
-        if ((eventInRow.location) != nil){
-            if (!eventInRow.location!.isEmpty) {
-                textForCell += ", " + eventInRow.location!
-            }
+        if let eventLocation = eventInRow.location, !eventLocation.isEmpty {
+            textForCell += ", " + eventLocation
         }
         
-        eventTitleLabel.text =  textForCell
+        eventTitleLabel.text = textForCell
         eventAllDaySwitch.isOn = eventInRow.allDay ?? false
         eventDateLabel.text = eventInRow.date.toStringIncludedTime(!eventAllDaySwitch.isOn)
     }

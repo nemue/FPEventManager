@@ -16,72 +16,52 @@ class EventTableViewController: UIViewController, UITableViewDataSource, UITable
     
     // MARK: - Properties
     
-    let cellIdentifier = "EventTableViewCell"
-    var events: [Event] = []
-    
-    // MARK: – UITableViewDataSource
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let numberOfRows = events.count
-        return numberOfRows
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? EventTableViewCell
-            else{
-                fatalError("The dequeued cell is not an instance of EventTableViewCell")
-        }
-        
-        let event = events[indexPath.row]
-        cell.configureCell(eventInRow: event)
-        return cell
-    }
-    
-    
-    // MARK: - UITableViewDelegate
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        // TODO: respond to touch events
-        let event = events[indexPath.row]
-        print(event.title ?? "")
-        print(event.date)
-    }
-    
+    private let cellIdentifier = "EventTableViewCell"
+    private var events: [Event] = []
     
     // MARK: - ViewController Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        generateSampleEvents()
-
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        // generateSampleEvents()
     }
     
+    // MARK: – UITableViewDataSource
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let numberOfRows = self.events.count
+        return numberOfRows
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier, for: indexPath) as? EventTableViewCell
+            else{
+                fatalError("The dequeued cell is not an instance of EventTableViewCell")
+        }
+        
+        let event = self.events[indexPath.row]
+        cell.configureCell(eventInRow: event)
+        return cell
+    }
+    
+    // MARK: - UITableViewDelegate
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // TODO: respond to touch events
+    }
     
     // MARK: - Actions
     
     @IBAction func unwindToEventList(sender: UIStoryboardSegue){
-        if let sourceViewController = sender.source as? EventDetailTableViewController, let event = sourceViewController.event{
-            let newIndexPath = IndexPath(row: events.count, section: 0)
+        if let sourceViewController = sender.source as? EventDetailTableViewController{
+            let newIndexPath = IndexPath(row: self.events.count, section: 0)
             
-            let eventTitle = event.title ?? ""
-            if (!eventTitle.isEmpty){
-                events.append(event)
-                tableView.insertRows(at: [newIndexPath], with: .automatic)
-            }
+            let event = sourceViewController.getEvent()
+            self.events.append(event)
+            self.tableView.insertRows(at: [newIndexPath], with: .automatic)
         }
     }
-    
     
     // MARK: - Private Methods
     
@@ -94,7 +74,7 @@ class EventTableViewController: UIViewController, UITableViewDataSource, UITable
         let event3 = Event(title: "drittes Event", location: "Berlin", date: date)
         let event4 = Event(title: "viertes Event", location: "Leipzig", date: date, allDay: true)
         
-        events += [event1, event2, event3, event4]
+        self.events = [event1, event2, event3, event4]
     }
 
 }
