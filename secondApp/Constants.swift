@@ -9,9 +9,15 @@
 import Foundation
 
 struct Constants {
+    
+    struct EventListConstants {
+        static let eventListCellIdentifier = "EventTableViewCell"
+    }
 
-    static let textCellIdentifier = "EventDetailTextCell"
-    static let allDaySwitchCellIdentifier = "EventDetailAllDaySwitchCell"
-    static let dateCellIdentifier = "EventDetailDateCell"
-    static let datePickerCellIdentifier = "EventDetailDatePickerCell"
+    struct EventDetailConstants {
+        static let textCellIdentifier = "EventDetailTextCell"
+        static let allDaySwitchCellIdentifier = "EventDetailAllDaySwitchCell"
+        static let dateCellIdentifier = "EventDetailDateCell"
+        static let datePickerCellIdentifier = "EventDetailDatePickerCell"
+    }
 }

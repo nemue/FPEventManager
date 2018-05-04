@@ -61,7 +61,7 @@ class EventDetailTableViewController: UITableViewController, UITextFieldDelegate
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch self.eventArray[indexPath.section][indexPath.row] {
         case .title:
-            guard let textCell = tableView.dequeueReusableCell(withIdentifier: Constants.textCellIdentifier, for: indexPath) as? EventDetailTextCell
+            guard let textCell = tableView.dequeueReusableCell(withIdentifier: Constants.EventDetailConstants.textCellIdentifier, for: indexPath) as? EventDetailTextCell
                 else {
                     fatalError("The dequeued cell is not an instance of EventDetailTextCell")
             }
@@ -72,7 +72,7 @@ class EventDetailTableViewController: UITableViewController, UITextFieldDelegate
             return textCell
             
         case .location:
-            guard let textCell = tableView.dequeueReusableCell(withIdentifier: Constants.textCellIdentifier, for: indexPath) as? EventDetailTextCell
+            guard let textCell = tableView.dequeueReusableCell(withIdentifier: Constants.EventDetailConstants.textCellIdentifier, for: indexPath) as? EventDetailTextCell
                 else {
                     fatalError("The dequeued cell is not an instance of EventDetailTextCell")
             }
@@ -83,7 +83,7 @@ class EventDetailTableViewController: UITableViewController, UITextFieldDelegate
             return textCell
             
         case .uiSwitch:
-            guard let switchCell = tableView.dequeueReusableCell(withIdentifier: Constants.allDaySwitchCellIdentifier, for: indexPath) as? EventDetailAlldaySwitchCell
+            guard let switchCell = tableView.dequeueReusableCell(withIdentifier: Constants.EventDetailConstants.allDaySwitchCellIdentifier, for: indexPath) as? EventDetailAlldaySwitchCell
                 else {
                     fatalError("The dequeued cell is not an instance of EventDetailAlldaySwitchCell")
             }
@@ -97,7 +97,7 @@ class EventDetailTableViewController: UITableViewController, UITextFieldDelegate
             return switchCell
             
         case .date:
-            guard let dateCell = tableView.dequeueReusableCell(withIdentifier: Constants.dateCellIdentifier, for: indexPath) as? EventDetailDateCell
+            guard let dateCell = tableView.dequeueReusableCell(withIdentifier: Constants.EventDetailConstants.dateCellIdentifier, for: indexPath) as? EventDetailDateCell
                 else {
                     fatalError("The dequeued cell is not an instance of EventDetailTextCell")
             }
@@ -108,7 +108,7 @@ class EventDetailTableViewController: UITableViewController, UITextFieldDelegate
             return dateCell
             
         case .datePicker:
-            guard let datePickerCell = tableView.dequeueReusableCell(withIdentifier: Constants.datePickerCellIdentifier, for: indexPath) as? EventDetailDatePickerCell
+            guard let datePickerCell = tableView.dequeueReusableCell(withIdentifier: Constants.EventDetailConstants.datePickerCellIdentifier, for: indexPath) as? EventDetailDatePickerCell
                 else {
                     fatalError("The dequeued cell is not an instance of EventDetailDatePickerCell")
                 }
@@ -217,8 +217,8 @@ class EventDetailTableViewController: UITableViewController, UITextFieldDelegate
     }
     
     private func updateDateLabelCell(){
-        if self.indexPathForDateLabelCell != nil {
-            tableView.reloadRows(at: [self.indexPathForDateLabelCell!], with: .none)
+        if let indexPathForDateLabelCell = self.indexPathForDateLabelCell {
+            tableView.reloadRows(at: [indexPathForDateLabelCell], with: .none)
         }
     }
 

@@ -16,7 +16,6 @@ class EventTableViewController: UIViewController, UITableViewDataSource, UITable
     
     // MARK: - Properties
     
-    private let cellIdentifier = "EventTableViewCell"
     private var events: [Event] = []
     
     // MARK: - ViewController Life Cycle
@@ -30,12 +29,11 @@ class EventTableViewController: UIViewController, UITableViewDataSource, UITable
     // MARK: – UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let numberOfRows = self.events.count
-        return numberOfRows
+        return self.events.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier, for: indexPath) as? EventTableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.EventListConstants.eventListCellIdentifier, for: indexPath) as? EventTableViewCell
             else{
                 fatalError("The dequeued cell is not an instance of EventTableViewCell")
         }
@@ -59,7 +57,10 @@ class EventTableViewController: UIViewController, UITableViewDataSource, UITable
             
             let event = sourceViewController.getEvent()
             self.events.append(event)
+            
+            self.tableView.beginUpdates()
             self.tableView.insertRows(at: [newIndexPath], with: .automatic)
+            self.tableView.endUpdates()
         }
     }
     
