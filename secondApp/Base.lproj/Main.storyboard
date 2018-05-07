@@ -37,8 +37,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n7V-zt-Ic3">
-                                                    <rect key="frame" x="15" y="11" width="288" height="29"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n7V-zt-Ic3">
+                                                    <rect key="frame" x="15" y="11" width="288" height="31"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -52,10 +52,12 @@
                                                 <constraint firstItem="n7V-zt-Ic3" firstAttribute="top" secondItem="zt1-DK-xIo" secondAttribute="topMargin" id="60w-ia-UuT"/>
                                                 <constraint firstItem="IWO-GB-ZfM" firstAttribute="trailing" secondItem="zt1-DK-xIo" secondAttribute="trailingMargin" id="6dE-kb-ri4"/>
                                                 <constraint firstItem="IWO-GB-ZfM" firstAttribute="bottom" secondItem="zt1-DK-xIo" secondAttribute="bottomMargin" id="B5Z-ks-3es"/>
+                                                <constraint firstItem="I97-Nn-Vdn" firstAttribute="leading" secondItem="n7V-zt-Ic3" secondAttribute="trailing" constant="8" id="IWX-27-avf"/>
                                                 <constraint firstItem="I97-Nn-Vdn" firstAttribute="top" secondItem="zt1-DK-xIo" secondAttribute="topMargin" id="MUl-ql-fpz"/>
                                                 <constraint firstItem="IWO-GB-ZfM" firstAttribute="top" secondItem="I97-Nn-Vdn" secondAttribute="bottom" constant="6" id="i2u-gL-HYj"/>
                                                 <constraint firstItem="IWO-GB-ZfM" firstAttribute="leading" secondItem="zt1-DK-xIo" secondAttribute="leadingMargin" id="nzp-Bn-wHN"/>
                                                 <constraint firstItem="n7V-zt-Ic3" firstAttribute="leading" secondItem="zt1-DK-xIo" secondAttribute="leadingMargin" id="pw8-mE-Smq"/>
+                                                <constraint firstItem="n7V-zt-Ic3" firstAttribute="height" secondItem="I97-Nn-Vdn" secondAttribute="height" id="qM8-Wx-VDG"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -104,7 +106,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventDetailTextCell" id="13m-3k-qyk" customClass="EventDetailTextCell" customModule="secondApp" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="EventDetailTextCell" id="13m-3k-qyk" customClass="EventDetailTextCell" customModule="secondApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="13m-3k-qyk" id="xCg-Pb-hFu">
@@ -112,16 +114,22 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iZh-mU-RWw">
-                                            <rect key="frame" x="16" y="16" width="343" height="17"/>
+                                            <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="43.5" id="1ls-tN-2uL"/>
+                                            </constraints>
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
+                                            <connections>
+                                                <action selector="textFieldTextDidChange:" destination="13m-3k-qyk" eventType="editingChanged" id="jfN-fB-Bhw"/>
+                                            </connections>
                                         </textField>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="iZh-mU-RWw" firstAttribute="bottom" secondItem="xCg-Pb-hFu" secondAttribute="bottomMargin" id="D78-2R-yDo"/>
+                                        <constraint firstItem="iZh-mU-RWw" firstAttribute="bottom" secondItem="xCg-Pb-hFu" secondAttribute="bottom" id="D78-2R-yDo"/>
                                         <constraint firstAttribute="trailing" secondItem="iZh-mU-RWw" secondAttribute="trailing" constant="16" id="flX-T9-fNW"/>
-                                        <constraint firstItem="iZh-mU-RWw" firstAttribute="top" secondItem="xCg-Pb-hFu" secondAttribute="topMargin" constant="5" id="xQN-J0-CPs"/>
+                                        <constraint firstItem="iZh-mU-RWw" firstAttribute="top" secondItem="xCg-Pb-hFu" secondAttribute="top" id="xQN-J0-CPs"/>
                                         <constraint firstItem="iZh-mU-RWw" firstAttribute="leading" secondItem="xCg-Pb-hFu" secondAttribute="leading" constant="16" id="ySO-Uj-Aaw"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -129,7 +137,7 @@
                                     <outlet property="textField" destination="iZh-mU-RWw" id="xmj-GI-kCN"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventDetailAllDaySwitchCell" id="unZ-fj-6uo" customClass="EventDetailAlldaySwitchCell" customModule="secondApp" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="EventDetailAllDaySwitchCell" id="unZ-fj-6uo" customClass="EventDetailAlldaySwitchCell" customModule="secondApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="99.5" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="unZ-fj-6uo" id="j2n-DB-LBc">
@@ -170,17 +178,14 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Starts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9sK-Hz-nPv">
-                                            <rect key="frame" x="16" y="11" width="60" height="22"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="60" id="L0g-eG-SKP"/>
-                                            </constraints>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Starts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9sK-Hz-nPv">
+                                            <rect key="frame" x="16" y="11" width="301" height="22"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KMi-5k-DsQ">
-                                            <rect key="frame" x="139" y="11" width="220" height="21"/>
+                                            <rect key="frame" x="317" y="11" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="1" green="0.20682725041059957" blue="0.044343551258372527" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <nil key="highlightedColor"/>
@@ -193,7 +198,7 @@
                                         <constraint firstItem="9sK-Hz-nPv" firstAttribute="leading" secondItem="YaM-8V-Xws" secondAttribute="leadingMargin" id="Wzv-7H-mn9"/>
                                         <constraint firstItem="9sK-Hz-nPv" firstAttribute="firstBaseline" secondItem="KMi-5k-DsQ" secondAttribute="firstBaseline" id="XHl-LS-uTx"/>
                                         <constraint firstItem="KMi-5k-DsQ" firstAttribute="top" secondItem="YaM-8V-Xws" secondAttribute="topMargin" id="bma-ou-1Xu"/>
-                                        <constraint firstItem="KMi-5k-DsQ" firstAttribute="leading" secondItem="9sK-Hz-nPv" secondAttribute="trailing" constant="63" id="mIY-Oj-fJk"/>
+                                        <constraint firstItem="KMi-5k-DsQ" firstAttribute="leading" secondItem="9sK-Hz-nPv" secondAttribute="trailing" id="mIY-Oj-fJk"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>

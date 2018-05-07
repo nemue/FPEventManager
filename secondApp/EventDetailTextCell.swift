@@ -14,13 +14,24 @@ class EventDetailTextCell: UITableViewCell {
     
     @IBOutlet private weak var textField: UITextField!
     
+    // MARK: - Properties
+    
+    var textFieldChangedHandler: ((String?) -> Void)?
     
     // MARK: - Configuration
     
-    func configure(textFieldDelegate: UITextFieldDelegate, text: String?, tag: Int) {
-        self.textField.delegate = textFieldDelegate
+    func configure(text: String?, tag: Int, forEventInfo eventInfo: EventInfo,
+                   textFieldChangedHandler: @escaping ((String?) -> Void)) {
+        
+        self.textFieldChangedHandler = textFieldChangedHandler        
+        self.textField.placeholder = eventInfo.placeHolderText()
         self.textField.text = text
         self.textField.tag = tag
     }
+    
+    // MARK: - Actions
 
+    @IBAction func textFieldTextDidChange(_ textField: UITextField) {
+        self.textFieldChangedHandler?(textField.text)
+    }
 }

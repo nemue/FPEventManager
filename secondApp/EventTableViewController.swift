@@ -17,15 +17,7 @@ class EventTableViewController: UIViewController, UITableViewDataSource, UITable
     // MARK: - Properties
     
     private var events: [Event] = []
-    
-    // MARK: - ViewController Life Cycle
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // generateSampleEvents()
-    }
-    
+
     // MARK: – UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -66,8 +58,7 @@ class EventTableViewController: UIViewController, UITableViewDataSource, UITable
     
     // MARK: - Private Methods
     
-    private func generateSampleEvents () {
-        
+    private func generateSampleEvents() {
         let date = Date()
         
         let event1 = Event(title: "erstes Event", date: date)
@@ -77,6 +68,5 @@ class EventTableViewController: UIViewController, UITableViewDataSource, UITable
         
         self.events = [event1, event2, event3, event4]
     }
-
 }
 

@@ -9,7 +9,7 @@
 import UIKit
 import os.log
 
-class EventDetailTableViewController: UITableViewController, UITextFieldDelegate {
+class EventDetailTableViewController: UITableViewController {
     
     // MARK: - Outlets
     
@@ -31,6 +31,7 @@ class EventDetailTableViewController: UITableViewController, UITextFieldDelegate
         
         self.updateViewModelArray()
         self.updateAddButtonState()
+
     }
 
     // MARK: - Navigation
@@ -67,8 +68,12 @@ class EventDetailTableViewController: UITableViewController, UITextFieldDelegate
             }
             
             let textCellTag = EventInfo.title.rawValue
+            let titleTextChangedHandler = {(changedText: String?) in
+                self.event.title = changedText
+                self.updateAddButtonState()
+            }
             
-            textCell.configure(textFieldDelegate: self, text: self.event.title, tag: textCellTag)
+            textCell.configure(text: self.event.title, tag: textCellTag, forEventInfo: .title, textFieldChangedHandler: titleTextChangedHandler)
             return textCell
             
         case .location:
@@ -78,8 +83,11 @@ class EventDetailTableViewController: UITableViewController, UITextFieldDelegate
             }
             
             let textCellTag = EventInfo.location.rawValue
+            let locationTextChangedHandler = { (changedLocation: String?) in
+                self.event.location = changedLocation
+            }
             
-            textCell.configure(textFieldDelegate: self, text: self.event.location, tag: textCellTag)
+            textCell.configure(text: self.event.location, tag: textCellTag, forEventInfo: .location, textFieldChangedHandler: locationTextChangedHandler)
             return textCell
             
         case .uiSwitch:
@@ -128,7 +136,10 @@ class EventDetailTableViewController: UITableViewController, UITextFieldDelegate
     // MARK: - UITableViewDelegate
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if self.eventArray[indexPath.section][indexPath.row] == .date {
+        
+        let cellType = self.eventArray[indexPath.section][indexPath.row]
+
+        if cellType == .date {
             
             if(!self.datePickerIsShown){
                 self.insertDatePickerCellBelow(indexPath: indexPath)
@@ -139,33 +150,10 @@ class EventDetailTableViewController: UITableViewController, UITextFieldDelegate
             
             self.datePickerIsShown = !self.datePickerIsShown
         }
-    }
- 
-    // MARK: - UITextFieldDelegate
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        self.updateAddButtonState()
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
         
-        if let eventInfo = EventInfo(rawValue: textField.tag) {
-            switch eventInfo {
-            case .title:
-                self.event.title = textField.text
-            case .location:
-                self.event.location = textField.text
-            default:
-                os_log("Edited textField does not exist in textFieldDidEndEditing function.")
-            }
+        if cellType != .title || cellType != .location {
+            self.dismissKeyboard()
         }
-
-        self.updateAddButtonState()
     }
     
     // MARK: - Public Methods
@@ -221,6 +209,10 @@ class EventDetailTableViewController: UITableViewController, UITextFieldDelegate
             tableView.reloadRows(at: [indexPathForDateLabelCell], with: .none)
         }
     }
+    
+    private func dismissKeyboard() {
+        view.endEditing(true)
+    }
 
 }
 
@@ -232,4 +224,12 @@ enum EventInfo: Int {
     case uiSwitch
     case date
     case datePicker
+    
+    func placeHolderText() -> String? {
+        switch self {
+        case .title: return "Title"
+        case .location: return "Location"
+        default: return nil
+        }
+    }
 }
