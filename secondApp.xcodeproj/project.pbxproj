@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F7254E7D209B0250003BDA94 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7254E7C209B0250003BDA94 /* Constants.swift */; };
 		F728B87A208E1E9700B9819E /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F728B879208E1E9700B9819E /* DateExtension.swift */; };
+		F754773720C6A01500261A39 /* secondAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F754773620C6A01500261A39 /* secondAppUITests.swift */; };
 		F754820D2084CEE700E2B924 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = F754820C2084CEE700E2B924 /* Event.swift */; };
 		F754820F2084DCF700E2B924 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F754820E2084DCF700E2B924 /* EventTableViewCell.swift */; };
 		F77DC7A62085F6EE008A21F8 /* EventDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77DC7A52085F6EE008A21F8 /* EventDetailTableViewController.swift */; };
@@ -25,6 +26,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		F754773920C6A01500261A39 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F7F3118220600C980019A496 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F7F3118920600C980019A496;
+			remoteInfo = secondApp;
+		};
 		F7F3119F20600C980019A496 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F7F3118220600C980019A496 /* Project object */;
@@ -37,6 +45,9 @@
 /* Begin PBXFileReference section */
 		F7254E7C209B0250003BDA94 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F728B879208E1E9700B9819E /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		F754773420C6A01500261A39 /* secondAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = secondAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F754773620C6A01500261A39 /* secondAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = secondAppUITests.swift; sourceTree = "<group>"; };
+		F754773820C6A01500261A39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F754820C2084CEE700E2B924 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		F754820E2084DCF700E2B924 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		F77DC7A52085F6EE008A21F8 /* EventDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailTableViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +68,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		F754773120C6A01500261A39 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F7F3118720600C980019A496 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -74,11 +92,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F754773520C6A01500261A39 /* secondAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F754773620C6A01500261A39 /* secondAppUITests.swift */,
+				F754773820C6A01500261A39 /* Info.plist */,
+			);
+			path = secondAppUITests;
+			sourceTree = "<group>";
+		};
 		F7F3118120600C980019A496 = {
 			isa = PBXGroup;
 			children = (
 				F7F3118C20600C980019A496 /* secondApp */,
 				F7F311A120600C980019A496 /* secondAppTests */,
+				F754773520C6A01500261A39 /* secondAppUITests */,
 				F7F3118B20600C980019A496 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -88,6 +116,7 @@
 			children = (
 				F7F3118A20600C980019A496 /* secondApp.app */,
 				F7F3119E20600C980019A496 /* secondAppTests.xctest */,
+				F754773420C6A01500261A39 /* secondAppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -126,6 +155,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		F754773320C6A01500261A39 /* secondAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F754773D20C6A01500261A39 /* Build configuration list for PBXNativeTarget "secondAppUITests" */;
+			buildPhases = (
+				F754773020C6A01500261A39 /* Sources */,
+				F754773120C6A01500261A39 /* Frameworks */,
+				F754773220C6A01500261A39 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F754773A20C6A01500261A39 /* PBXTargetDependency */,
+			);
+			name = secondAppUITests;
+			productName = secondAppUITests;
+			productReference = F754773420C6A01500261A39 /* secondAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		F7F3118920600C980019A496 /* secondApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F7F311A720600C980019A496 /* Build configuration list for PBXNativeTarget "secondApp" */;
@@ -171,6 +218,11 @@
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Nele Müller";
 				TargetAttributes = {
+					F754773320C6A01500261A39 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F7F3118920600C980019A496;
+					};
 					F7F3118920600C980019A496 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
@@ -197,11 +249,19 @@
 			targets = (
 				F7F3118920600C980019A496 /* secondApp */,
 				F7F3119D20600C980019A496 /* secondAppTests */,
+				F754773320C6A01500261A39 /* secondAppUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		F754773220C6A01500261A39 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F7F3118820600C980019A496 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -222,6 +282,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		F754773020C6A01500261A39 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F754773720C6A01500261A39 /* secondAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F7F3118620600C980019A496 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -251,6 +319,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		F754773A20C6A01500261A39 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F7F3118920600C980019A496 /* secondApp */;
+			targetProxy = F754773920C6A01500261A39 /* PBXContainerItemProxy */;
+		};
 		F7F311A020600C980019A496 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F7F3118920600C980019A496 /* secondApp */;
@@ -278,6 +351,34 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		F754773B20C6A01500261A39 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = secondAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.secondAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = secondApp;
+			};
+			name = Debug;
+		};
+		F754773C20C6A01500261A39 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = secondAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.secondAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = secondApp;
+			};
+			name = Release;
+		};
 		F7F311A520600C980019A496 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -448,6 +549,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		F754773D20C6A01500261A39 /* Build configuration list for PBXNativeTarget "secondAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F754773B20C6A01500261A39 /* Debug */,
+				F754773C20C6A01500261A39 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F7F3118520600C980019A496 /* Build configuration list for PBXProject "secondApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

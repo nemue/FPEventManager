@@ -19,7 +19,7 @@ class EventDetailTableViewController: UITableViewController {
     
     private let userCalendar = Calendar.current
 
-    private var event: Event = Event()
+    var event: Event = Event()
     private var indexPathForDateLabelCell: IndexPath?
     private var eventArray = [[EventInfo]]()
     private var datePickerIsShown = false

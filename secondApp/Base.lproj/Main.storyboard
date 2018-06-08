@@ -33,18 +33,21 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IWO-GB-ZfM">
                                                     <rect key="frame" x="15" y="48" width="345" height="21"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="dateLabelId"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n7V-zt-Ic3">
                                                     <rect key="frame" x="15" y="11" width="288" height="31"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="titleLabelId"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="I97-Nn-Vdn">
                                                     <rect key="frame" x="311" y="11" width="51" height="31"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="allDaySwitchId"/>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -60,6 +63,9 @@
                                                 <constraint firstItem="n7V-zt-Ic3" firstAttribute="height" secondItem="I97-Nn-Vdn" secondAttribute="height" id="qM8-Wx-VDG"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
                                         <connections>
                                             <outlet property="eventAllDaySwitch" destination="I97-Nn-Vdn" id="3cz-3T-NYV"/>
                                             <outlet property="eventDateLabel" destination="IWO-GB-ZfM" id="7JB-kX-ADr"/>
@@ -115,6 +121,7 @@
                                     <subviews>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iZh-mU-RWw">
                                             <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
+                                            <accessibility key="accessibilityConfiguration" identifier="detailTitleTextId"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="43.5" id="1ls-tN-2uL"/>
                                             </constraints>
@@ -133,6 +140,9 @@
                                         <constraint firstItem="iZh-mU-RWw" firstAttribute="leading" secondItem="xCg-Pb-hFu" secondAttribute="leading" constant="16" id="ySO-Uj-Aaw"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <accessibility key="accessibilityConfiguration">
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
                                 <connections>
                                     <outlet property="textField" destination="iZh-mU-RWw" id="xmj-GI-kCN"/>
                                 </connections>
@@ -152,6 +162,7 @@
                                         </label>
                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="uPf-GH-7ml">
                                             <rect key="frame" x="310" y="6" width="51" height="31"/>
+                                            <accessibility key="accessibilityConfiguration" identifier="detailAllDaySwitchId"/>
                                             <connections>
                                                 <action selector="switchValueChanged:" destination="unZ-fj-6uo" eventType="valueChanged" id="7KJ-Te-zvs"/>
                                             </connections>
@@ -167,6 +178,9 @@
                                         <constraint firstItem="0WN-wk-NnU" firstAttribute="bottom" secondItem="j2n-DB-LBc" secondAttribute="bottomMargin" id="eh7-0n-mgr"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <accessibility key="accessibilityConfiguration">
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
                                 <connections>
                                     <outlet property="allDaySwitch" destination="uPf-GH-7ml" id="OLx-20-LNR"/>
                                 </connections>
@@ -186,6 +200,7 @@
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KMi-5k-DsQ">
                                             <rect key="frame" x="317" y="11" width="42" height="21"/>
+                                            <accessibility key="accessibilityConfiguration" identifier="detailDateLabelId"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="1" green="0.20682725041059957" blue="0.044343551258372527" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <nil key="highlightedColor"/>
@@ -201,6 +216,9 @@
                                         <constraint firstItem="KMi-5k-DsQ" firstAttribute="leading" secondItem="9sK-Hz-nPv" secondAttribute="trailing" id="mIY-Oj-fJk"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <accessibility key="accessibilityConfiguration" identifier="detailDateCellId">
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
                                 <connections>
                                     <outlet property="dateLabel" destination="KMi-5k-DsQ" id="S8i-zJ-aKv"/>
                                 </connections>
@@ -217,7 +235,6 @@
                                             <date key="date" timeIntervalSinceReferenceDate="546773007.31508899">
                                                 <!--2018-04-30 09:23:27 +0000-->
                                             </date>
-                                            <locale key="locale" localeIdentifier="de"/>
                                             <connections>
                                                 <action selector="dateChanged:" destination="Vei-iB-HQa" eventType="valueChanged" id="xhb-3R-mWH"/>
                                             </connections>
@@ -230,6 +247,9 @@
                                         <constraint firstItem="F9k-NN-8k8" firstAttribute="top" secondItem="Wg4-9x-LTG" secondAttribute="top" constant="4" id="o86-sg-7C3"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <accessibility key="accessibilityConfiguration" identifier="detailDatePickerCellId">
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
                                 <connections>
                                     <outlet property="datePicker" destination="F9k-NN-8k8" id="c2b-fV-JkK"/>
                                 </connections>
